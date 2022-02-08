@@ -6,6 +6,11 @@ class Qemu < Formula
   license "GPL-2.0-only"
   head "https://git.qemu.org/git/qemu.git", branch: "master"
 
+  patch do
+    url "https://github.com/qemu/qemu/compare/v6.2.0...afbjorklund:9p-darwin-v6.2.0.patch"
+    sha256 "54627d368b9332a64b105dcf3be6575eabdb33a67e5095dc20aa2d4f8c4fc3cb"
+  end
+
   bottle do
     rebuild 1
     sha256 arm64_monterey: "ebb70e2c067ed6b7675d2f3f58d994c70d5816bf43efcaffbb14c3b302486228"
@@ -36,8 +41,10 @@ class Qemu < Formula
   depends_on "vde"
 
   on_linux do
+    depends_on "attr"
     depends_on "gcc"
     depends_on "gtk+3"
+    depends_on "libcap-ng"
   end
 
   fails_with gcc: "5"
@@ -61,6 +68,7 @@ class Qemu < Formula
       --enable-libssh
       --enable-slirp=system
       --enable-vde
+      --enable-virtfs
       --extra-cflags=-DNCURSES_WIDECHAR=1
       --disable-sdl
     ]
