@@ -4,7 +4,7 @@ class Qemu < Formula
   url "https://download.qemu.org/qemu-6.2.0.tar.xz"
   sha256 "68e15d8e45ac56326e0b9a4afa8b49a3dfe8aba3488221d098c84698bca65b45"
   license "GPL-2.0-only"
-  head "https://git.qemu.org/git/qemu.git", branch: "master"
+  head "https://gitlab.com/wwcohen/qemu.git", branch: "9p-darwin"
 
   patch do
     url "https://github.com/qemu/qemu/compare/v6.2.0...afbjorklund:9p-darwin-v6.2.0.patch"
