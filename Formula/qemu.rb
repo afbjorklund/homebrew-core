@@ -7,8 +7,8 @@ class Qemu < Formula
   head "https://gitlab.com/wwcohen/qemu.git", branch: "9p-darwin"
 
   patch do
-    url "https://github.com/qemu/qemu/compare/v6.2.0...afbjorklund:9p-darwin-v6.2.0.patch"
-    sha256 "54627d368b9332a64b105dcf3be6575eabdb33a67e5095dc20aa2d4f8c4fc3cb"
+    url "https://github.com/qemu/qemu/compare/v6.2.0...afbjorklund:9p-darwin-v6.2.0.diff"
+    sha256 "de2d99711e46036c35f569995ef12cb5e6e0046cdda10d67817eea6d4389a68f"
   end
 
   bottle do
