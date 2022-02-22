@@ -6,9 +6,11 @@ class Qemu < Formula
   license "GPL-2.0-only"
   head "https://gitlab.com/wwcohen/qemu.git", branch: "9p-darwin"
 
-  patch do
-    url "https://github.com/qemu/qemu/compare/v6.2.0...willcohen:0024dfc24f88410fe9d85ef8e4a27cbc7283b87a.patch"
-    sha256 "72a35081f1ad79529580a78339dfbcc808c85e7de4120e0b47d1769330b59449"
+  unless build.head?
+    patch do
+      url "https://github.com/qemu/qemu/compare/v6.2.0...willcohen:0024dfc24f88410fe9d85ef8e4a27cbc7283b87a.patch"
+      sha256 "72a35081f1ad79529580a78339dfbcc808c85e7de4120e0b47d1769330b59449"
+    end
   end
 
   bottle do
