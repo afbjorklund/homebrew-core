@@ -5,7 +5,7 @@ class Qemu < Formula
   sha256 "68e15d8e45ac56326e0b9a4afa8b49a3dfe8aba3488221d098c84698bca65b45"
   license "GPL-2.0-only"
   head "https://gitlab.com/wwcohen/qemu.git", branch: "9p-darwin"
-
+  # Comment out this patch, if trying to build 7.0.0 from HEAD !
   patch do
     url "https://github.com/qemu/qemu/compare/v6.2.0...willcohen:0024dfc24f88410fe9d85ef8e4a27cbc7283b87a.patch"
     sha256 "72a35081f1ad79529580a78339dfbcc808c85e7de4120e0b47d1769330b59449"
