@@ -4,8 +4,8 @@ class Freetds < Formula
   license "LGPL-2.0-or-later"
 
   stable do
-    url "https://www.freetds.org/files/stable/freetds-1.3.7.tar.gz", using: :homebrew_curl
-    sha256 "bf4cb1aecb0d1cd1cb41b69275df96b56132b9ceb7592c208fba208fe7244e14"
+    url "https://www.freetds.org/files/stable/freetds-1.3.9.tar.gz", using: :homebrew_curl
+    sha256 "923dff0c8cf258ef33d661d71bf431ffb55218f14e0026f75d361951c2e92dbb"
 
     # Fix -flat_namespace being used on Big Sur and later.
     patch do
@@ -20,12 +20,12 @@ class Freetds < Formula
   end
 
   bottle do
-    sha256 arm64_monterey: "00fc9202b0f05a0799e1552a07b5aaf3dc646b8663ee0acbf4acf0cad56615fd"
-    sha256 arm64_big_sur:  "dfd7b48b9f9dae1b2738539c4d9243b775d89360faa4d3ae498991ef995e7716"
-    sha256 monterey:       "13aa339e1efa4d6718ddf4d8db862f044869af65ac796b4436e4837cac3d7029"
-    sha256 big_sur:        "8d5a3022198800395d6cb8735f264c14bb367190e41cc1ee1fdd8d5704ed1a27"
-    sha256 catalina:       "328c91d6ded280e017288f277d8e5c9592a93f6d799a600c03f00117dc1e4cac"
-    sha256 x86_64_linux:   "b29593efb4e5428c02634fb157dd7bfc97129dfcf97b9e638179771e03e0ba88"
+    sha256 arm64_monterey: "8717760292249498afc8e822bf848ba8ad694c6898a0a5d40ab404c8deda8102"
+    sha256 arm64_big_sur:  "dbe9bf2aa2d5c08122bcf4687879d4b12632690ee8800fb85891a02557a4130f"
+    sha256 monterey:       "97f3205764a327250f02b8b865c64da309cd7e678d00e1c8ab8788f10ea207d7"
+    sha256 big_sur:        "cbd58146111dea706ee06f72c1ca3283a75e63f08d9c0e200aab5c89a12b7e50"
+    sha256 catalina:       "0a6c953da2cceddcad1aa6f0dff6a50bc07fe587699d6f68efe502f393fbc1cf"
+    sha256 x86_64_linux:   "1d141167d7f3a52ec24f48421689d912e14ecb2d45777cff07a3259621a70b0a"
   end
 
   head do

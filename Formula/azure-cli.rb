@@ -3,8 +3,8 @@ class AzureCli < Formula
 
   desc "Microsoft Azure CLI 2.0"
   homepage "https://docs.microsoft.com/cli/azure/overview"
-  url "https://github.com/Azure/azure-cli/archive/azure-cli-2.33.0.tar.gz"
-  sha256 "b772b9f2e02c7b8c3614a37cbbae906eed040083600e7083640c01bec423d7e5"
+  url "https://github.com/Azure/azure-cli/archive/azure-cli-2.33.1.tar.gz"
+  sha256 "66c99c5decf3a91d35e0161970c8b9eb31f71dff111f5035d46a3d0b07541c5f"
   license "MIT"
   head "https://github.com/Azure/azure-cli.git", branch: "dev"
 
@@ -15,12 +15,12 @@ class AzureCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "02c2d182bb30ea904a62a567600851ebfb1e72191f26cc721c31fdb10ed3d2d7"
-    sha256 cellar: :any,                 arm64_big_sur:  "a211acfa6e4fed0d02849deee685162ac044f8ae1626acce2574f5af55a312ef"
-    sha256 cellar: :any,                 monterey:       "72c801d1fd44b2d2ffd925defa5b7133be585e9e5620e87763a7261be528b9e2"
-    sha256 cellar: :any,                 big_sur:        "19844fe34cc6b3d7309ed01d6c3dc27c93f59983ce63edd7496f73404d71d476"
-    sha256 cellar: :any,                 catalina:       "93f023397132b4ef573c10d5840b9c6201325da4e54c1bd872ab67c2755f6191"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f454b5961c58ddc76ae90a2d8351523d484641d58f1dfcf4f8afc8ef8ff9d21b"
+    sha256 cellar: :any,                 arm64_monterey: "fb10990d19ee14180a6553d2057a0b3ba6449a28d7436da28b4a96292f8084d9"
+    sha256 cellar: :any,                 arm64_big_sur:  "9069d39c748344c830e31fd07589aa3f1f5a1fdc04b059839d76e6eecd5db05a"
+    sha256 cellar: :any,                 monterey:       "b6db7869a5965c72fc21fb5e76cb442940505fc1d8719c9a6cecf0f21e26629b"
+    sha256 cellar: :any,                 big_sur:        "0aa8507e05de77affae99b6d95a7b94eb09118c0f5ccc3996a1139017fc27837"
+    sha256 cellar: :any,                 catalina:       "f3089d75fbcee80dfeb7e6555fd602a8599b7ca45d125be5c32e0516bfd081be"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fe86fd5babb9a0d29bf0ebb492ec84d59d39ff49bbf2b65031728fb4643874ac"
   end
 
   depends_on "openssl@1.1"
@@ -533,8 +533,8 @@ class AzureCli < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/48/44/76b179e0d1afe6e6a91fd5661c284f60238987f3b42b676d141d01cd5b97/charset-normalizer-2.0.10.tar.gz"
-    sha256 "876d180e9d7432c5d1dfd4c5d26b72f099d503e8fcc0feb7532c9289be60fcbd"
+    url "https://files.pythonhosted.org/packages/56/31/7bcaf657fafb3c6db8c787a865434290b726653c912085fbd371e9b92e1c/charset-normalizer-2.0.12.tar.gz"
+    sha256 "2857e29ff0d34db842cd7ca3230549d1a697f96ee6d3fb071cfa6c7393832597"
   end
 
   resource "colorama" do

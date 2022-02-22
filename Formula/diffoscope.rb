@@ -3,17 +3,17 @@ class Diffoscope < Formula
 
   desc "In-depth comparison of files, archives, and directories"
   homepage "https://diffoscope.org"
-  url "https://files.pythonhosted.org/packages/8f/d4/bef49ad4265fb4a6842873bc777bb3fa3741cb35ac94f7bcbf1186c9dcd2/diffoscope-203.tar.gz"
-  sha256 "d048dbbef81c6a77985f76b9a358e014461ac5c7b36920449fdc999e314654e7"
+  url "https://files.pythonhosted.org/packages/ad/83/93ea946442700cdced602dcec9b653ad335920d42937db774aad07cfcf16/diffoscope-205.tar.gz"
+  sha256 "64d95c926baf934ddcc21863711eee3c21867e9073d86f74bf33604a1d1227b8"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "74cf9ec1e1e0c55740d8be74b20f70c82fc8b7c9b46892abdcee349ea21ebb67"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "15aba476527b666eb0747fc79393434778d9a272007a2ed446bab0c8200598e4"
-    sha256 cellar: :any_skip_relocation, monterey:       "3ed1dd6cc33fad7040c21398041430d275d24ac3d8cf71434c178e87ebf9af19"
-    sha256 cellar: :any_skip_relocation, big_sur:        "9699cf062e871f1c6501dc80017c45697e31211bdb95284fbe30231ae64bffed"
-    sha256 cellar: :any_skip_relocation, catalina:       "b5b5d51b83d239a80ef3237f5957244b89ecfbffe17dd551faa145efdb0dd25a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "794f62e7f10ea899d34191e167d8edf5f3259c3ac12365dffc11707566a0ea41"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "5919e4b005a93a9e13d0aad004e52d9521cca6e0a5b1e2117675e88ff3856d49"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ebad24e51794fea3b0ef7877a3979a8aef5ce33c4b0618fc4689ddcc25291229"
+    sha256 cellar: :any_skip_relocation, monterey:       "602c780442e817168b780dcc9132824fc77dadd5fb292f133c4ef99f4652cbcf"
+    sha256 cellar: :any_skip_relocation, big_sur:        "faca6bc580e9b87824e3e46f595a853f8a01daeb94b81dd86af4fe7e740b3eca"
+    sha256 cellar: :any_skip_relocation, catalina:       "920b9a52ce7b42c451381b36fa7ce2025b9108101ce6b7fd985cc8ca610d822e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c9855c386547d5fe7116989de4c7cc25463b9a70093641ec3bafe01096c92b4d"
   end
 
   depends_on "libarchive"
