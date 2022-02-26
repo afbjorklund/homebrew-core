@@ -85,6 +85,7 @@ class Qemu < Formula
     args << "--enable-gtk" if OS.linux?
 
     system "mv hw/9pfs/9p-util.c hw/9pfs/9p-util-linux.c" unless build.head?
+    inreplace "os-posix.c", "-ENOTSUPP", "-1" if build.head?
 
     system "./configure", *args
     system "make", "V=1", "install"
