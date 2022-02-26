@@ -84,6 +84,8 @@ class Qemu < Formula
     args << "--enable-cocoa" if OS.mac?
     args << "--enable-gtk" if OS.linux?
 
+    system "mv hw/9pfs/9p-util.c hw/9pfs/9p-util-linux.c" unless build.head?
+
     system "./configure", *args
     system "make", "V=1", "install"
   end
