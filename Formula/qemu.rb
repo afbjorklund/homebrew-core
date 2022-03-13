@@ -7,8 +7,8 @@ class Qemu < Formula
   head "https://gitlab.com/wwcohen/qemu.git", branch: "9p-darwin"
   stable do
     patch do
-      url "https://github.com/qemu/qemu/compare/v6.2.0...willcohen:0024dfc24f88410fe9d85ef8e4a27cbc7283b87a.patch"
-      sha256 "72a35081f1ad79529580a78339dfbcc808c85e7de4120e0b47d1769330b59449"
+      url "https://github.com/qemu/qemu/compare/v6.2.0...willcohen:1035762cbedfb53e5c8ddf4fc4aefa6ee75adf2a.patch"
+      sha256 "11e6c3490a69f68b444379f5245cdb10535f4e878a4cbe1b79d612e09875621b"
     end
   end
 
@@ -85,7 +85,6 @@ class Qemu < Formula
     args << "--enable-gtk" if OS.linux?
 
     system "mv hw/9pfs/9p-util.c hw/9pfs/9p-util-linux.c" unless build.head?
-    inreplace "os-posix.c", "-ENOTSUPP", "-1" if build.head?
 
     system "./configure", *args
     system "make", "V=1", "install"
