@@ -6,13 +6,17 @@ class Autorest < Formula
   url "https://registry.npmjs.org/autorest/-/autorest-3.5.1.tgz"
   sha256 "3361f0cf71b7013efb38376f65f973f0dfa83a86a59cfb749380344bcea8bdbe"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "42c2714757885b2ce0383b48ee0ae82ef1ba0e836bcc44706a9ea822cc0b09c4"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "7af3dc683e96f877de0ba31239fd11c01649e6306066fd7cf804ebacf9f0de62"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "7af3dc683e96f877de0ba31239fd11c01649e6306066fd7cf804ebacf9f0de62"
+    sha256 cellar: :any_skip_relocation, monterey:       "9c8d4687059deeb64c56b99eece09ea5004052fbfbed3a291222e78ec58424bd"
+    sha256 cellar: :any_skip_relocation, big_sur:        "9c8d4687059deeb64c56b99eece09ea5004052fbfbed3a291222e78ec58424bd"
+    sha256 cellar: :any_skip_relocation, catalina:       "9c8d4687059deeb64c56b99eece09ea5004052fbfbed3a291222e78ec58424bd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7af3dc683e96f877de0ba31239fd11c01649e6306066fd7cf804ebacf9f0de62"
   end
 
-  depends_on arch: :x86_64
-  depends_on :macos # test fails on Linux
   depends_on "node"
 
   resource "homebrew-petstore" do
@@ -28,7 +32,7 @@ class Autorest < Formula
   test do
     resource("homebrew-petstore").stage do
       system (bin/"autorest"), "--input-file=petstore.yaml",
-                               "--nodejs",
+                               "--typescript",
                                "--output-folder=petstore"
       assert_includes File.read("petstore/package.json"), "Microsoft Corporation"
     end

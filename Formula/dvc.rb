@@ -6,14 +6,15 @@ class Dvc < Formula
   url "https://files.pythonhosted.org/packages/e9/46/33ac44445fd6974fe6b52f01ab4794c5b5dda927cfb520ac64382e629905/dvc-2.9.5.tar.gz"
   sha256 "d4bd89c074ddac14f775c8eec95ad22821b863c0aeb51c0defd20a036d36e0ca"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "c61c911e4451a4a0d6da6b317189726769ef2ff701a736a264e59ab77631a018"
-    sha256 cellar: :any,                 arm64_big_sur:  "10cb316ae227a2c86a203db2395eecb6e3cd32f4183a4bf74dc5ab39a828fa86"
-    sha256 cellar: :any,                 monterey:       "298060ac6bb520d0f0e0e60a59cb967c087e0a3022ee605bc755750f27b35505"
-    sha256 cellar: :any,                 big_sur:        "e7c9de42e30d2ece8a2cdbda92fb36a743fd0f5a872aa54d341ff711b81ab506"
-    sha256 cellar: :any,                 catalina:       "fcce94cc89acedc77b43c139f0583040c852233aa91c45f437944a68794234f3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c1a4dab8cdda3960294dda3bbe1bc24291238a31bbc682d37e914fa75ae00203"
+    sha256 cellar: :any,                 arm64_monterey: "dc870a72f32ecfd1e709e2998ba782e35f2b5b24b0fde1154250a22019b23cb1"
+    sha256 cellar: :any,                 arm64_big_sur:  "c6fab2c10350447a1333f4e1abae6dc927bcf6e8e450faafab3647efcf8a4207"
+    sha256 cellar: :any,                 monterey:       "095a9decfed82db59223c7be61ad91e9070e7a374e966bf59e42f09a72d65ef4"
+    sha256 cellar: :any,                 big_sur:        "8424c94cdb40c7b247c2c0d23db260f7dbc2a580fd48e53cb41bca230b6ae9b8"
+    sha256 cellar: :any,                 catalina:       "11f584420c9b87a12b1afb84e36d4427017ec2c22ded845d3f8727b2fb43ff6a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "088c5507f99186ac30bd6153c1ffb58514e101b89087cee766d1f67fb2295806"
   end
 
   depends_on "pkg-config" => :build
@@ -471,8 +472,8 @@ class Dvc < Formula
   end
 
   resource "pygit2" do
-    url "https://files.pythonhosted.org/packages/30/55/3dbb6ebc87e523d6cdb622e73b46b2da477a94f8a3c8b2734232383ffe29/pygit2-1.8.0.tar.gz"
-    sha256 "6e2c5cff5aa1e43f43103480761152f5c5d6bef40f5c1f50c8758a6e89e66cb6"
+    url "https://files.pythonhosted.org/packages/7e/8c/c162e50ad20c36b457aa97a9d96536fde316d90052fb03fc4ae22a7fe9ea/pygit2-1.9.0.tar.gz"
+    sha256 "c5e8588acad5e32fa0595582571059e6b90ec7c487c58b4e53c2800dcbde44c8"
   end
 
   resource "Pygments" do

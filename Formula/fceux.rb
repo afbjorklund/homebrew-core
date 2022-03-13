@@ -2,23 +2,24 @@ class Fceux < Formula
   desc "All-in-one NES/Famicom Emulator"
   homepage "https://fceux.com/"
   url "https://github.com/TASEmulators/fceux.git",
-      tag:      "fceux-2.6.2",
-      revision: "c685033a13127e8442549ff55b2554ed65ff3cfb"
+      tag:      "fceux-2.6.3",
+      revision: "84cf82cb6a5b1d486523855e056ecebed34d7862"
   license "GPL-2.0-only"
   head "https://github.com/TASEmulators/fceux.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_monterey: "22e13ed6bc659da8e941863c7ef34f31385d31d766debaa71ad7c4f2878b4fc2"
-    sha256 cellar: :any, arm64_big_sur:  "d267bc35a0b3230082e48c786e09d42b24e16ee5fe0223eabdab346c01b53612"
-    sha256 cellar: :any, big_sur:        "b9b6430e809a99b47d3c7dcba39950d808f85b491dfa65068529776a2a4d07a6"
-    sha256 cellar: :any, catalina:       "f867e4798505b2d2947dc0a5b2e9c659ba22b6bf67942d2f4309d2c93f5f47ed"
+    sha256 cellar: :any, arm64_monterey: "ca8d296677efe2411d35bb74007259c4daa24f1d464709150684f1ee3828168e"
+    sha256 cellar: :any, arm64_big_sur:  "d09db6f7a940654916002a49226113f1a936716ccae5901d870281f72bd0c17a"
+    sha256 cellar: :any, monterey:       "2d8ee62c8e4f15e97d5cf52b07093a62ee69a0c2283e41bb03301bc1c3997b77"
+    sha256 cellar: :any, big_sur:        "5cff74b8d555a3de7d14f420b5e7ec2474e07648e9e11985c9275a02dab035b2"
+    sha256 cellar: :any, catalina:       "3ce20ce9e46e3cad0550ba1c832e3d4aba40d19d899e5f1c63ae4610afdd983f"
   end
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "ffmpeg"
   depends_on "minizip"
-  depends_on "qt@5"
+  depends_on "qt"
   depends_on "sdl2"
   depends_on "x264"
 
@@ -29,7 +30,7 @@ class Fceux < Formula
 
   def install
     ENV["CXXFLAGS"] = "-DPUBLIC_RELEASE=1" if build.stable?
-    system "cmake", ".", *std_cmake_args
+    system "cmake", ".", *std_cmake_args, "-DQT6=ON"
     system "make"
     cp "src/auxlib.lua", "output/luaScripts"
     libexec.install "src/fceux.app/Contents/MacOS/fceux"

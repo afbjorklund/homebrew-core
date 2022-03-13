@@ -2,20 +2,20 @@ class Filebeat < Formula
   desc "File harvester to ship log files to Elasticsearch or Logstash"
   homepage "https://www.elastic.co/products/beats/filebeat"
   url "https://github.com/elastic/beats.git",
-      tag:      "v8.0.0",
-      revision: "2ab3a7334016f570e0bfc7e9a577a35a22e02df5"
+      tag:      "v8.1.0",
+      revision: "da4d9c00179e062b6d88c9dbe07d89b3d195d9d0"
   # Outside of the "x-pack" folder, source code in a given file is licensed
   # under the Apache License Version 2.0
   license "Apache-2.0"
   head "https://github.com/elastic/beats.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d85e4554aa4e54435e04119d58c659d10b0f7f5f9842bfacf44d3840ed03c2a0"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "78d3e3d7715ddfbf819933d7010d42039c1dd8d095cdecfe66f74bce7e2ff5ae"
-    sha256 cellar: :any_skip_relocation, monterey:       "2e3afa981e7c8a4314324996cd9af4a93338cae94b5a323d4b43d53fa804ea98"
-    sha256 cellar: :any_skip_relocation, big_sur:        "8bd24f5ef6f144a0ab5a45056b734d2aa6303a70cb59385f713efe5e1af3c4f4"
-    sha256 cellar: :any_skip_relocation, catalina:       "55f6646564abffd81060e9400dec86ec37f5925273629dbabb51ea120122454d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "14f78714969bb0936c6090987bb750735308e737fd294157a9e2f60f71ad0adb"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "fa83d013cb84c1094e3e8673febc30aeeccef317f2db46a217a1069266ca9a96"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1883453a621201f0017d5c8a07984463d5f94d8307fdb35764814f512a7bf5f8"
+    sha256 cellar: :any_skip_relocation, monterey:       "0ce906453254611183d65572070024996c964f9043e28f5dd9bdbe7276bdcfc5"
+    sha256 cellar: :any_skip_relocation, big_sur:        "30812099790af212a829eb0c219e3cbacd702c7344f149b5e7d8031baf16a9cd"
+    sha256 cellar: :any_skip_relocation, catalina:       "c637969dcbdb4d16fe62a49db4f5e05695be098e54bf55a31ee20d1426ec5fe2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5a9de12cb52705fbf88d85f422776ca9ecc6bb826014d5bc545516bbc7f33067"
   end
 
   depends_on "go" => :build

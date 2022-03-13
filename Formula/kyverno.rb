@@ -2,18 +2,25 @@ class Kyverno < Formula
   desc "Kubernetes Native Policy Management"
   homepage "https://kyverno.io/"
   url "https://github.com/kyverno/kyverno.git",
-      tag:      "v1.6.0",
-      revision: "5b4d4c266353981a559fe210b4e85100fa3bf397"
+      tag:      "v1.6.1",
+      revision: "346a7c41c8041f03c553690eb2ab61d2db3e8742"
   license "Apache-2.0"
   head "https://github.com/kyverno/kyverno.git", branch: "main"
 
+  # This regex is intended to match Kyverno version tags (e.g., `v1.2.3`) and
+  # omit unrelated tags (e.g., `helm-chart-v2.0.3`).
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "dbd5a15c710f28d1f481ce428cc01217fc2e92f915174eca7268f666cf4e5e66"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "90d2cc3ac15f59db62ce8d719ceadd6472e102237a87c44490f0b8f0fefac6ac"
-    sha256 cellar: :any_skip_relocation, monterey:       "da4498ec238aeadffcddd85c6526fdf946df6d16a9d3a165b9357d2b38b34beb"
-    sha256 cellar: :any_skip_relocation, big_sur:        "58a3dcd79628e4111bd4fc88c42eccaab8dacc5fa01983de6e0957cf76add227"
-    sha256 cellar: :any_skip_relocation, catalina:       "a38eb8df5861149a89b7f400e5d226dd1d81357e497a3be7a4eabbdbfdfe6a84"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9b31e7cb7664d21b7d07dcfce7792b8693c9c68bfa306128a5ba312f60b58b15"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "146b40ad41d074fc81a1cb55db50b02e27c2fa581052e6db2e822e27afa4917d"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8fc0d49b3526cf90d9fe6c0cc8eeeacda272ab51a3c83fe11923d51a66c8dfda"
+    sha256 cellar: :any_skip_relocation, monterey:       "506079d7623dd8f79fd550d305170df926e7b99655ef9011c610696d6703a1fe"
+    sha256 cellar: :any_skip_relocation, big_sur:        "b6a40a84324503da1dc92ae7d3425e0a55e81c9fc3bed620992ac62e04342a25"
+    sha256 cellar: :any_skip_relocation, catalina:       "417a92a8f0f109f25ae529cc6a054d481c58896019c45357a0eeb0add4a3334f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "59acbeac6a1877674d1f1b0b74595be99fa9afd0d7a24bbfe208d33642ed8529"
   end
 
   depends_on "go" => :build

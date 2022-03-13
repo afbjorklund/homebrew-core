@@ -1,18 +1,18 @@
 class Fizz < Formula
   desc "C++14 implementation of the TLS-1.3 standard"
   homepage "https://github.com/facebookincubator/fizz"
-  url "https://github.com/facebookincubator/fizz/releases/download/v2022.02.21.00/fizz-v2022.02.21.00.tar.gz"
-  sha256 "cf314c558fa3264a6acdbb652f688335c0c377cfeadd863b52ac143ec4c83b31"
+  url "https://github.com/facebookincubator/fizz/releases/download/v2022.03.07.00/fizz-v2022.03.07.00.tar.gz"
+  sha256 "22e06dbb4860c99306cf64d15bb2ce248678f0747bbe326e78441378f4391c02"
   license "BSD-2-Clause"
   head "https://github.com/facebookincubator/fizz.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "a99d382b053e8c7c8d9b490e41c835f8e8e2181489fcf9610e383b5458de2468"
-    sha256 cellar: :any,                 arm64_big_sur:  "5913a040640d308c26a5a45d6d622e008d42477335aa4074b0a9dbfc8a1ea5e3"
-    sha256 cellar: :any,                 monterey:       "cd04da7b11ecacd5791baa576e7662ab9e3d6ac9ca76144c9f9610e9b36c453e"
-    sha256 cellar: :any,                 big_sur:        "30eac81bc2bba9dbad56d0da8b8c5c55d2fd0552330728f5e9246e29f43d95b2"
-    sha256 cellar: :any,                 catalina:       "dd65bffa585736c6d45abb122727fc5d3e2fcc7cf2aea16413a477218c748df2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "55f49aa00c767a9261141e993f3bb7faeffce7f688e7b744b9c2b23b1718d478"
+    sha256 cellar: :any,                 arm64_monterey: "557f732e8eb5f73420bc41ced6567cc0c2b107a193a9922a1709aab82de86e4e"
+    sha256 cellar: :any,                 arm64_big_sur:  "9ac54a04faa56bdb95ff7e20f1f33294c45a4ddc1d22e70dbb4a0c730e2eebf8"
+    sha256 cellar: :any,                 monterey:       "949d715b94781bf9394f4991c9b08b6b5e91d48052610addcbbf9ae9df26b1bd"
+    sha256 cellar: :any,                 big_sur:        "4d159a7299d73cbb26bc39d450becba06d6134e75b879fd5df104993e0abe852"
+    sha256 cellar: :any,                 catalina:       "d50193fa1f7cd11c06f36e39f990cbe07ae863d3d901bdfd8a0af0ac228944df"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3d5d697f6910beaaea13fb64d6ec30aebfc4aa69ed4135e62f4f3847f3ca2bed"
   end
 
   depends_on "cmake" => :build

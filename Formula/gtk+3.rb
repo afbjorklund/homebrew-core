@@ -1,8 +1,8 @@
 class Gtkx3 < Formula
   desc "Toolkit for creating graphical user interfaces"
   homepage "https://gtk.org/"
-  url "https://download.gnome.org/sources/gtk+/3.24/gtk+-3.24.31.tar.xz"
-  sha256 "423c3e7fdb4c459ee889e35fd4d71fd2623562541c1041b11c07e5ad1ff10bf9"
+  url "https://download.gnome.org/sources/gtk+/3.24/gtk+-3.24.33.tar.xz"
+  sha256 "588b06522e25d1579e989b6f9d8a1bdbf2fe13cde01a04e904ff346a225e7801"
   license "LGPL-2.0-or-later"
 
   livecheck do
@@ -11,12 +11,12 @@ class Gtkx3 < Formula
   end
 
   bottle do
-    sha256 arm64_monterey: "95677f324c9c5f157d8d91929a36fbfa4e861ccac05e398c8c30747819a29f96"
-    sha256 arm64_big_sur:  "becb412476cd5402d6d590d7ff63fd2acaf57d4bdd449a069a46502216664454"
-    sha256 monterey:       "7e5253c2884d0ea0d67dc0f2e26de01019bcc5aa47cc5f9ec1ee54df01414922"
-    sha256 big_sur:        "9407a8ff0ea5bf92c37f370a1e69b25d678bac2aedc6b2b9185e06b7873258e1"
-    sha256 catalina:       "823c78526bee20cb4b39389634931d129bb0e64f250e6df9f36b578df7e34c24"
-    sha256 x86_64_linux:   "babb646605dd9d50d3ccecf15b85c046ebe292f40ae83336eb12ca5597186c88"
+    sha256 arm64_monterey: "84a4ff580d06fd775ada33c9dee10023a34e4c97bb53989d419301927da5f811"
+    sha256 arm64_big_sur:  "afa8b021ccb5892f72a652776a8507363d94930246bd97e0fc14160fb2e9b09f"
+    sha256 monterey:       "bf7179e65af27fb5d53e68c35133b1fda8df16154116487d1e43650b4d43b5fc"
+    sha256 big_sur:        "5663c25fdf71581670e910f5eaa1f5a15ac8d9b15646a5a3c2fb6d9d1ecb0068"
+    sha256 catalina:       "3c3a03087c25f42ae49c8a6cbbd579a974c3abccf5b22f222254abfe194e76ab"
+    sha256 x86_64_linux:   "52087a7da738cf6be66aa13aa34a062a80fcc8bd65889f06ddbd48eb3438eaa6"
   end
 
   depends_on "docbook" => :build
@@ -43,13 +43,6 @@ class Gtkx3 < Formula
     depends_on "libxkbcommon"
     depends_on "xorgproto"
     depends_on "wayland-protocols"
-  end
-
-  # Patch to fix QuartzCore linking and compiling
-  # Remove in next minor release
-  patch do
-    url "https://gitlab.gnome.org/GNOME/gtk/-/commit/8352dee082db9e5ae989a2ed2c38e1060044bada.diff"
-    sha256 "d1a4acee4382cd8840d138958e46076bf4209f6e9e64ec34c364277bba9ca380"
   end
 
   def install

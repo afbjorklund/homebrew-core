@@ -1,18 +1,18 @@
 class Wangle < Formula
   desc "Modular, composable client/server abstractions framework"
   homepage "https://github.com/facebook/wangle"
-  url "https://github.com/facebook/wangle/releases/download/v2022.02.21.00/wangle-v2022.02.21.00.tar.gz"
-  sha256 "6e787c10b7f58b5665e58eee2cbfa5cb088c61401db0268633b19ef6ab1db6f3"
+  url "https://github.com/facebook/wangle/releases/download/v2022.03.07.00/wangle-v2022.03.07.00.tar.gz"
+  sha256 "099bc671182b3655690f07b052283c9af17ec5f8abae995afffb9bc7c3037958"
   license "Apache-2.0"
   head "https://github.com/facebook/wangle.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "fd0172d9f3078e2f683eaf407d8fa63fccfb76541e5f85607a412afd926dfcc5"
-    sha256 cellar: :any,                 arm64_big_sur:  "2abe62f3955b85825b43d12aea3f32a5f6c269f4f5f3bc30cd8899e9804a1196"
-    sha256 cellar: :any,                 monterey:       "d38caefebc94749df9767e82af3153f86f66a4a0b22dee9f6e5d306bde2e420b"
-    sha256 cellar: :any,                 big_sur:        "7353c4087d86acf9b684dc9edf80b0f6c6622743d49ecda31b7f046aa0a7a05a"
-    sha256 cellar: :any,                 catalina:       "50be429f0fe43d85e712098f6a607c117053404028df67fb587250941e3fe135"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "89456baaba02015e26b2d75c23421ba7d1b97379e5c8690372c8c620abf9e13b"
+    sha256 cellar: :any,                 arm64_monterey: "31029c52013a51b3133ca4850280165f04d1fc4688ed324c1324edb48f208429"
+    sha256 cellar: :any,                 arm64_big_sur:  "40768aa47f03038c1f82e6dc77785d2182bbd3158ea599886db20f2b70e5a754"
+    sha256 cellar: :any,                 monterey:       "604f14c16ce4b5db4a71182b0d3fdeca985c924459d28f35c63197f6c9138d59"
+    sha256 cellar: :any,                 big_sur:        "94e929058ab5d5915f15dea67d705257f65a8a923474fa08ef7719d799aecb56"
+    sha256 cellar: :any,                 catalina:       "b0fb098dd7d38b48ff0028cf01f2fbf26fd4e200ea6f5da78616394720dadddd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "151bf03a42405996514264f48b9510147c35d1cea44d347876dfa49d1e607148"
   end
 
   depends_on "cmake" => :build

@@ -1,30 +1,27 @@
 class Brook < Formula
   desc "Cross-platform strong encryption and not detectable proxy. Zero-Configuration"
   homepage "https://txthinking.github.io/brook/"
-  url "https://github.com/txthinking/brook/archive/refs/tags/v20210401.tar.gz"
-  sha256 "6229b2f0b53d94acb873e246d10f2a4662af2a031a03e7fb5c3befffcd998731"
+  url "https://github.com/txthinking/brook/archive/refs/tags/v20220404.tar.gz"
+  sha256 "a119adf673df8f61fcaec841e471392cfdd9d307fe52ec9d6b3d9393846a7630"
   license "GPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c0d971d55c3c597c79d9b7ac088c76429015bec888354c1a99103af9ab88a021"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ae611e972e986ae0d8f868e4e179320b120e34abcfa32e1e07449709b1eff0e5"
-    sha256 cellar: :any_skip_relocation, monterey:       "02dcc8ff9f5af8bd607e4a996d50ba4d0d3dfa5d5126334f9471d8168ae53819"
-    sha256 cellar: :any_skip_relocation, big_sur:        "5b0661f65db2b397e6dcf36b84b649e383835cf38df778a54ba95d9c8239dfd2"
-    sha256 cellar: :any_skip_relocation, catalina:       "d3f484395c5fbf6c218b359ab37be696be4c8277b5cdd8b1441950755f62cac1"
-    sha256 cellar: :any_skip_relocation, mojave:         "082279557c3e15d460334a8a7f5f0f028bd7ec0aa7328a7cd7e5149a4ce029c2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "062e4fbf5db1df0bbe66de05086a0bd054047a4a1dcc1870bc36e30024d884ea"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "43d35c65880d1f85056bba7556fc5f773534032c80e0e6a0b6b9f84e3c878d12"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f57bd17848e0bb4663aa413ab6fe9da02cebbab772bee3abbbf9a9ce8fc2a190"
+    sha256 cellar: :any_skip_relocation, monterey:       "90d4a69afbd4a0cb0cbdffde5e575b89fbef100da6dd5884fcc12462c48cf0a2"
+    sha256 cellar: :any_skip_relocation, big_sur:        "3f496698f323b942def1bd3b0f07584b8b151729e67df50e691345dfe9abfd5e"
+    sha256 cellar: :any_skip_relocation, catalina:       "4b694ad465c018130bdcbe65ea6950b70dafa3e4dfecf583642ff203fc4d592a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0172ede33b3d64d08b5bbc4e496761944e9867190e2110a49a06de49cad38417"
   end
 
   depends_on "go" => :build
 
   def install
-    cd "cli/brook" do
-      system "go", "build", *std_go_args(ldflags: "-s -w")
-    end
+    system "go", "build", *std_go_args(ldflags: "-s -w"), "./cli/brook"
   end
 
   test do
-    output = shell_output "#{bin}/brook link -s 1.2.3.4:56789"
-    assert_match "brook://1.2.3.4%3A56789", output
+    output = shell_output "#{bin}/brook link --server 1.2.3.4:56789 --password hello"
+    assert_match "brook://server?address=&insecure=&name=&password=hello&server=1.2.3.4%3A56789&username=", output
   end
 end

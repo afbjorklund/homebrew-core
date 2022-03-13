@@ -1,18 +1,18 @@
 class Broot < Formula
   desc "New way to see and navigate directory trees"
   homepage "https://dystroy.org/broot/"
-  url "https://github.com/Canop/broot/archive/v1.9.3.tar.gz"
-  sha256 "1034905ba031cd2b77f32e42835e228ae76f10005829e24ed0ad1035d12a6c4b"
+  url "https://github.com/Canop/broot/archive/v1.9.4.tar.gz"
+  sha256 "f1a3cda2ebb3a436b039cb2296914871599305f7f9292cc53d3641a67706fe9f"
   license "MIT"
   head "https://github.com/Canop/broot.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "dd380ae78256ba55b0cd76e5f4791fc8c20436bb5a917b261ef030b5559bf33d"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ee9d7f6a39348613611c48e7d7256a18f873fedea2403ebe3545510cd9ad1cfd"
-    sha256 cellar: :any_skip_relocation, monterey:       "3078be49db2380e4c6ddf3dbc86273657aa4160e8c2060e8e5d9d4fd140dce40"
-    sha256 cellar: :any_skip_relocation, big_sur:        "5df598cbbe460896225cef3f979ad755f4cf2d4a0e4830df19c1149637b15ac7"
-    sha256 cellar: :any_skip_relocation, catalina:       "191f1bb5af12cd2286ee35bc41b65ed286609475d44bbe5cc489b9de73aed553"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "aef770e0bc4520c0aef5d577abb628065f20681d14762e45ffbf2a44defed262"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "cce878a27d8b8361fcf52eac2869af60d8ee403c93342d2cbb34658883dbcb69"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "cb1383129cd5d56501cc0b4bc274d65fac116cc651ed5e548ecf6935ad8c9b64"
+    sha256 cellar: :any_skip_relocation, monterey:       "3fc0b658ae2b0d7c21b6bf45363da542ab66a2e2f6edd821d890ce9cd68d1b6d"
+    sha256 cellar: :any_skip_relocation, big_sur:        "255e700733fd5af8954e7acbbceec2dd011db85e13884008a98896349dd8930c"
+    sha256 cellar: :any_skip_relocation, catalina:       "372b82625802cce8fd4201f9e397e97813d2db6dabbef66a349dba05fe82bcf5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1ac312b6caebe73995a903ec65acfb2d5194f8e6afba2b2e5eb773daa9d1d224"
   end
 
   depends_on "rust" => :build

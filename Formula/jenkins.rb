@@ -1,8 +1,8 @@
 class Jenkins < Formula
   desc "Extendable open source continuous integration server"
   homepage "https://www.jenkins.io/"
-  url "https://get.jenkins.io/war/2.336/jenkins.war"
-  sha256 "e1055436a54ac3a3ee053fbbb6e11e669a082a59e4a83272e3baaed7ef63751f"
+  url "https://get.jenkins.io/war/2.338/jenkins.war"
+  sha256 "a9cd7cad00e887268e0a283ba6058e8f280368f31bc93af165281da191802f35"
   license "MIT"
 
   livecheck do
@@ -11,7 +11,7 @@ class Jenkins < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "ce872e205ba1ea7356bce63c3b2cfcf77d895383981ffc97eff197fc69cc6d6f"
+    sha256 cellar: :any_skip_relocation, all: "211d1b52647cd81d30f64a94f901bf47100fb21f18825a20396422d1b7291726"
   end
 
   head do
@@ -30,6 +30,8 @@ class Jenkins < Formula
     libexec.install Dir["**/jenkins.war", "**/cli-#{version}.jar"]
     bin.write_jar_script libexec/"jenkins.war", "jenkins", java_version: "11"
     bin.write_jar_script libexec/"cli-#{version}.jar", "jenkins-cli", java_version: "11"
+
+    (var/"log/jenkins").mkpath
   end
 
   def caveats
@@ -41,6 +43,9 @@ class Jenkins < Formula
   service do
     run [Formula["openjdk@11"].opt_bin/"java", "-Dmail.smtp.starttls.enable=true", "-jar", opt_libexec/"jenkins.war",
          "--httpListenAddress=127.0.0.1", "--httpPort=8080"]
+    keep_alive true
+    log_path var/"log/jenkins/output.log"
+    error_log_path var/"log/jenkins/error.log"
   end
 
   test do

@@ -2,8 +2,8 @@ class V8 < Formula
   desc "Google's JavaScript engine"
   homepage "https://github.com/v8/v8/wiki"
   # Track V8 version from Chrome stable: https://omahaproxy.appspot.com
-  url "https://github.com/v8/v8/archive/9.8.177.11.tar.gz"
-  sha256 "d1b1463e2aa4cca2b2c77f660165675a31047205ce0cb929e7f45b0e2cd58f95"
+  url "https://github.com/v8/v8/archive/9.9.115.8.tar.gz"
+  sha256 "e3406fc757aa3cddfc05131d94375b4e050f685295c4484efb045be781bd6d2e"
   license "BSD-3-Clause"
 
   livecheck do
@@ -12,12 +12,12 @@ class V8 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "a8d112cf731b1f408bfd79f00f8ff9ef4351115b9ecc41806599b1e8ed5eb90f"
-    sha256 cellar: :any,                 arm64_big_sur:  "f262d0673f4f77dc24a3f4eca77727409e61ca37a223fd0a9abc08d745ca5332"
-    sha256 cellar: :any,                 monterey:       "04b3a1b34ec6b17d8f868b2f23d041935c0f0a76bb5abdc3180ab4e840ce43e7"
-    sha256 cellar: :any,                 big_sur:        "a4f9fe4a45c41863e741e1d0f716b669bbd222666f908ca3704dae636e0fe596"
-    sha256 cellar: :any,                 catalina:       "302f6de5e670872bcf144186a19e0924ff9c546dd1c641b9c0e379c563554cf4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dfe2421cf9d4f2c760e4ccca3d337d5db0e096de14cf397fc899e185defb619f"
+    sha256 cellar: :any,                 arm64_monterey: "3a333ef9c5f6c7ac8ba221b2c03d4360c1b4d14cc037ac5fc85ed44839301f00"
+    sha256 cellar: :any,                 arm64_big_sur:  "19773928d1ae5a99d42167ac7c82dcfdf49ebd5b1d6f8cdb48b088fd80fbccb6"
+    sha256 cellar: :any,                 monterey:       "01989541426293a6ccd2a96a6a01160aa4f324e59f7a053d501105ffc0515c03"
+    sha256 cellar: :any,                 big_sur:        "fcb9b5ec972077416de4ddba764ee473d75687f5a35e216adf5c9ad194935500"
+    sha256 cellar: :any,                 catalina:       "8ab64667d8cd92b76654ddde3beb0154d7160ec7842933a82de7441f9aa7d79f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a65117d01b494d32b14cc12ff2eaf09aad99c410b8da10f19b4dcd88802149d6"
   end
 
   depends_on "ninja" => :build
@@ -37,13 +37,13 @@ class V8 < Formula
   fails_with gcc: "5"
 
   # Look up the correct resource revisions in the DEP file of the specific releases tag
-  # e.g. for CIPD dependency gn: https://chromium.googlesource.com/v8/v8.git/+/refs/tags/9.8.177.9/DEPS#43
+  # e.g. for CIPD dependency gn: https://chromium.googlesource.com/v8/v8.git/+/refs/tags/9.9.115.8/DEPS#43
   resource "gn" do
     url "https://gn.googlesource.com/gn.git",
-        revision: "fc295f3ac7ca4fe7acc6cb5fb052d22909ef3a8f"
+        revision: "80a40b07305373617eba2d5878d353532af77da3"
   end
 
-  # e.g.: https://chromium.googlesource.com/v8/v8.git/+/refs/tags/9.8.177.9/DEPS#84
+  # e.g.: https://chromium.googlesource.com/v8/v8.git/+/refs/tags/9.9.115.8/DEPS#84
   resource "v8/base/trace_event/common" do
     url "https://chromium.googlesource.com/chromium/src/base/trace_event/common.git",
         revision: "7f36dbc19d31e2aad895c60261ca8f726442bfbb"
@@ -51,17 +51,17 @@ class V8 < Formula
 
   resource "v8/build" do
     url "https://chromium.googlesource.com/chromium/src/build.git",
-        revision: "9cfc74504f0c5093fe6799e70f15bded2423b5b4"
+        revision: "f3be6e847f004923466a350274aae3fbf048c19c"
   end
 
   resource "v8/third_party/googletest/src" do
     url "https://chromium.googlesource.com/external/github.com/google/googletest.git",
-        revision: "4c5650f68866e3c2e60361d5c4c95c6f335fb64b"
+        revision: "c9643a2e45ed0cb18b8409c62994be7c6e66dc1b"
   end
 
   resource "v8/third_party/icu" do
     url "https://chromium.googlesource.com/chromium/deps/icu.git",
-        revision: "edf883ad2db9c723b058a6a17a146d68d6343143"
+        revision: "b9f6d0a5c5375dc4643f35360d257dba37c1d3e1"
   end
 
   resource "v8/third_party/jinja2" do
@@ -76,7 +76,7 @@ class V8 < Formula
 
   resource "v8/third_party/zlib" do
     url "https://chromium.googlesource.com/chromium/src/third_party/zlib.git",
-        revision: "efd9399ae01364926be2a38946127fdf463480db"
+        revision: "fc5cfd78a357d5bb7735a58f383634faaafe706a"
   end
 
   def install

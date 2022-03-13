@@ -2,8 +2,8 @@ class Fortio < Formula
   desc "HTTP and gRPC load testing and visualization tool and server"
   homepage "https://fortio.org/"
   url "https://github.com/fortio/fortio.git",
-      tag:      "v1.20.0",
-      revision: "4a325b93146c7faf5d7ff5a327d3c86abceb141f"
+      tag:      "v1.21.1",
+      revision: "7965771ec8feec9de2e1c6a3752c594aee7350b0"
   license "Apache-2.0"
 
   livecheck do
@@ -12,18 +12,19 @@ class Fortio < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0c6f9805dbb084f278e3762a280d1f114ce41b083a343cb48a94544b4cfb8197"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9a17004b44f4413f146fc13c871bcb6b37001289cb97e493f742a2bc2e6c0381"
-    sha256 cellar: :any_skip_relocation, monterey:       "9b5fc786958b6fa2059c94a018b265dd0eb26ac9cd475e72e88e3ed2be7fdc39"
-    sha256 cellar: :any_skip_relocation, big_sur:        "11c473908185031cbe4e308223a4413dc9bdd2f740713d9d79081e8eb6ceea50"
-    sha256 cellar: :any_skip_relocation, catalina:       "2d7d64148bb65a0b2d7dab2d7ae50e7b8dd4c819860db4479926b3a13b7d8b2e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e7031a304502832eb784729c62180377035112ef34f7ffd319497e66dae174b3"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d5f5baef5a0b6a5600b544615092bb373451ab54539ac3be22a1b392e407869f"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "382db4ecec6275d083836e2ba6763e9add3339fc50a51395309ea6ce4d2bbe6c"
+    sha256 cellar: :any_skip_relocation, monterey:       "f320e802e5358e91e088276b9dcfb76aec919e199ba7f19e933b14af873615c4"
+    sha256 cellar: :any_skip_relocation, big_sur:        "ae874bad25fafa787192bff0aa8bd044e3a536dd9a50975c4e747a81b4e19543"
+    sha256 cellar: :any_skip_relocation, catalina:       "42481ef697adde83f697ad41eecb5547edc7ff69be6378eef13e4805f4c3b3dc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5c5aef4ae9a22f7ec0a5225855d4b4a130b208f23c27310529d85e32c2247b4d"
   end
 
   depends_on "go" => :build
 
   def install
-    system "make", "official-build-clean", "official-build-version", "OFFICIAL_BIN=#{bin}/fortio"
+    system "make", "-j1", "official-build-clean", "official-build-version", "OFFICIAL_BIN=#{bin}/fortio",
+      "BUILD_DIR=./tmp/fortio_build"
   end
 
   test do

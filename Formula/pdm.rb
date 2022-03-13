@@ -3,18 +3,18 @@ class Pdm < Formula
 
   desc "Modern Python package manager with PEP 582 support"
   homepage "https://pdm.fming.dev"
-  url "https://files.pythonhosted.org/packages/d2/ab/ebbaada6eab1ff02316ce87cc55d85c4dc76c7136c5585069d0c5373760f/pdm-1.13.3.tar.gz"
-  sha256 "e7e6e38e58e693700768356363336e0bb96492f9692daf7f82b2a07661110bb9"
+  url "https://files.pythonhosted.org/packages/5c/69/b4ad8fd1cba77524e3eb7deb416430edf17b08defd2cc3e303995814a16e/pdm-1.13.4.tar.gz"
+  sha256 "5644fec425d1c0af04f135ad05b15b5a87be5a42e07f64e1706e3aac5dc89fcb"
   license "MIT"
   head "https://github.com/pdm-project/pdm.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ac41b4b1a08ba05d8b5b7e53bd711d1646b83ada33d68d824e533bb02add00fa"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "6a7d7e56b990356347b1dc14a55b51d7b635cd0aa4722043a9271fa5545b9657"
-    sha256 cellar: :any_skip_relocation, monterey:       "da0944b97bb166ba8c9f85b87170449f825e37d60eba13e746cbc656582a44d1"
-    sha256 cellar: :any_skip_relocation, big_sur:        "46775cf312281733398178f7b2476485827912f5b15f7962617ebe1687effb92"
-    sha256 cellar: :any_skip_relocation, catalina:       "d5c37966525da9ffc9fc733c6c2b7b1c82fd0c316d40f78228fb512e45c7cb9a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "83235302e0f959ecbac1cb2075bc33ed8d6ba706ec05b06c88e596cc55885dfc"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "d60c61b96687385c37d1b69e7aeea29d5f44156feac94bda9e605af804efa98a"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b5ab09b7c2924a35d2ea5c7085a8238202c3b121f5388e5d66f5ea5f8e4f835b"
+    sha256 cellar: :any_skip_relocation, monterey:       "4127807faccac682280e26c0b57179e7b50198884e5774d6590b5a118c47a111"
+    sha256 cellar: :any_skip_relocation, big_sur:        "b00050efd8e8f4e695d6a18fa0cd355d82f4bf77c4efa6ba34768b9175aa8891"
+    sha256 cellar: :any_skip_relocation, catalina:       "b3803dc2af7e9eae5fa12203c8b437c4d1bbabb69f1c537f60140e539e465117"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "931d6722b6e39ae99cdb4bfbaafbf67aff5a2aaf920b301d58b6be833f5d48fd"
   end
 
   depends_on "python@3.10"
@@ -46,8 +46,8 @@ class Pdm < Formula
   end
 
   resource "pdm-pep517" do
-    url "https://files.pythonhosted.org/packages/d3/70/f312e27fed1ad25decefae7a8e125349669b86f96a8e135a5086f244e566/pdm-pep517-0.11.2.tar.gz"
-    sha256 "e000bab43502c191d71808a2630dd44ece301a319d26e002a1caea3a7307cd20"
+    url "https://files.pythonhosted.org/packages/9d/81/1f4e15e6a59a66952c18a73b86a3959ddacf305d6c97f71640a7d9865d94/pdm-pep517-0.12.0.tar.gz"
+    sha256 "fdc8b6564fbba5fd1d01e37d2cef21bca11e698f70ab0b95740b9f6f0854a789"
   end
 
   resource "pep517" do

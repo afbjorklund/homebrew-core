@@ -1,8 +1,8 @@
 class Yq < Formula
   desc "Process YAML documents from the CLI"
   homepage "https://github.com/mikefarah/yq"
-  url "https://github.com/mikefarah/yq/archive/v4.20.2.tar.gz"
-  sha256 "031c63dd98e564b9a74b842ffe8ae929085f1486f59a27d4feb7e118f40c8a1e"
+  url "https://github.com/mikefarah/yq/archive/v4.22.1.tar.gz"
+  sha256 "79b4f01774849323db7cc649a270ac4aaccacea2e97260b25f51a634670ecb6e"
   license "MIT"
   head "https://github.com/mikefarah/yq.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Yq < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0e257499ccc9fe1ee6d43640b3cca572bec0c8a4e27adb02dac0247613b12ce1"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "421aea3cecc5ac16f45a428008c805fa96ee13412cc1a17fca5f377eeacce874"
-    sha256 cellar: :any_skip_relocation, monterey:       "15558cc833c981d8b120146792aedff9f6b4ebbf214f81248ef722b62b676502"
-    sha256 cellar: :any_skip_relocation, big_sur:        "8b1b98ba4aa6dc6d5d65f157aebf1e6d68eafeb97796e08c19d16bca5b255c11"
-    sha256 cellar: :any_skip_relocation, catalina:       "b3c913fad8a26e26347fe03d55264fe5d6e899e67eabaa1d76acacef58ee417c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ea3dd3a7c6403b1e44536906864d92dbb0b36e949f13a663055fc9d823888e5f"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "741170654b5a37db6f6d34508659191a0cc7fb1d93b98e0b059d0a4f28a8b9db"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3abab1b1b7f5013581704a3ef71f64ba2e49fe9ac37d14da9bf958b989361586"
+    sha256 cellar: :any_skip_relocation, monterey:       "1f07620ad3d86233add86a47e1d0c8fec2ceaa2355beacc579ff608899f3d801"
+    sha256 cellar: :any_skip_relocation, big_sur:        "eb250d5848e91e22fe57c693f1949a5d787a9da82abb178ca1587b07877398da"
+    sha256 cellar: :any_skip_relocation, catalina:       "73778ec3e3ea8d0c6b754d0c0ac1aa0343dacb7a6a90231b41becf9db3eacb2c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7ccb791886b6ef0fc80c106fbae6df04169e3bf61c60254872f794c70ae283db"
   end
 
   depends_on "go" => :build

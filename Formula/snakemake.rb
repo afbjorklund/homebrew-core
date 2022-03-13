@@ -3,18 +3,18 @@ class Snakemake < Formula
 
   desc "Pythonic workflow system"
   homepage "https://snakemake.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/dc/11/fbb2e9291de1467c7a0470382e09c6fff8e25eb989e6bb6355508a379ff5/snakemake-7.0.0.tar.gz"
-  sha256 "ab5c6b8f97d93714d2289dcb23cdc1027df2bc45cc09d083c759b24820fc53f4"
+  url "https://files.pythonhosted.org/packages/61/a8/cb55f798beac07e8c4660d97f5b24eb913bf343306c4f3ad5db79266dafd/snakemake-7.1.1.tar.gz"
+  sha256 "2b506c8bdf872b5ef98566971a7b8d9bd5f3b858e6efaef326f4f0c3e90052e8"
   license "MIT"
   head "https://github.com/snakemake/snakemake.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "638e612120748fcc13f5d1775b74884f4c2ebceb76680fb4dd4c6b11feab55cb"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "263fe64ebedb541f81682addabeb13b00e01cdcfe067f5f2fe97071fa0cb7cad"
-    sha256 cellar: :any_skip_relocation, monterey:       "ae4826a8baa3e020833992a5bfd8aad94f478d929c2d3c24952647e3ee743cd0"
-    sha256 cellar: :any_skip_relocation, big_sur:        "0b2fa128e46ac6a90c4d7577af3c2291f4e9b810e331b7c281068a4ac161e2f8"
-    sha256 cellar: :any_skip_relocation, catalina:       "2947a1767ca7215bf9a0196a17b5cae19e1e6e052b542e5372ebca6285cc2117"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f3391d739a813c5e70bbdde1fcc472e0c7f837cac3e5636bff50765929ca20d9"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "60654ef49cfe0e2e2e81c9fc57c5a446f726007aeb5df3d64e5239dfd656bb8c"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "980ec5704d89958c7f7d02488ef3e7905f414fd8aa2d48cc6fdb73546f29c21f"
+    sha256 cellar: :any_skip_relocation, monterey:       "86e7e2a9467ffc24acec91b443f584cd18a0e9f74c2d6b53041ff30c76d7b1ac"
+    sha256 cellar: :any_skip_relocation, big_sur:        "1054ecd0a7f9a2946b61541bc30af748c5a7687631df2ca0d06c09f8c14e1b81"
+    sha256 cellar: :any_skip_relocation, catalina:       "a027d7e47e9cb381757fa4cd140bb99d8d9faf39e0aebfe94e7853df2b98f2f1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bbfef99112056c225f4d01f89895ce52d34a85539116d665da70581f28aad5f6"
   end
 
   depends_on "cbc"
@@ -53,6 +53,11 @@ class Snakemake < Formula
   resource "datrie" do
     url "https://files.pythonhosted.org/packages/9d/fe/db74bd405d515f06657f11ad529878fd389576dca4812bea6f98d9b31574/datrie-0.8.2.tar.gz"
     sha256 "525b08f638d5cf6115df6ccd818e5a01298cd230b2dac91c8ff2e6499d18765d"
+  end
+
+  resource "decorator" do
+    url "https://files.pythonhosted.org/packages/66/0c/8d907af351aa16b42caae42f9d6aa37b900c67308052d10fdce809f8d952/decorator-5.1.1.tar.gz"
+    sha256 "637996211036b6385ef91435e4fae22989472f9d571faba8927ba8253acbc330"
   end
 
   resource "docutils" do
@@ -125,6 +130,11 @@ class Snakemake < Formula
     sha256 "4b4f7e1e954453e1b233720be23aea2f10ff068a835ac10c090a93d8e2eb2e8d"
   end
 
+  resource "py" do
+    url "https://files.pythonhosted.org/packages/98/ff/fec109ceb715d2a6b4c4a85a61af3b40c723a961e8828319fbcb15b868dc/py-1.11.0.tar.gz"
+    sha256 "51c75c4126074b472f746a24399ad32f6053d1b34b68d2fa41e558e6f4a98719"
+  end
+
   resource "pyrsistent" do
     url "https://files.pythonhosted.org/packages/42/ac/455fdc7294acc4d4154b904e80d964cc9aae75b087bbf486be04df9f2abd/pyrsistent-0.18.1.tar.gz"
     sha256 "d4d61f8b993a7255ba714df3aca52700f8125289f84f704cf80916517c46eb96"
@@ -143,6 +153,11 @@ class Snakemake < Formula
   resource "requests" do
     url "https://files.pythonhosted.org/packages/60/f3/26ff3767f099b73e0efa138a9998da67890793bfa475d8278f84a30fec77/requests-2.27.1.tar.gz"
     sha256 "68d7c56fd5a8999887728ef304a6d12edc7be74f1cfa47714fc8b414525c9a61"
+  end
+
+  resource "retry" do
+    url "https://files.pythonhosted.org/packages/9d/72/75d0b85443fbc8d9f38d08d2b1b67cc184ce35280e4a3813cda2f445f3a4/retry-0.9.2.tar.gz"
+    sha256 "f8bfa8b99b69c4506d6f5bd3b0aabf77f98cdb17f3c9fc3f5ca820033336fba4"
   end
 
   resource "smart-open" do
@@ -186,8 +201,8 @@ class Snakemake < Formula
   end
 
   resource "yte" do
-    url "https://files.pythonhosted.org/packages/5a/f1/282fd019eeb16916210fd4ca37e89602e30db3397f6569387f405b30dfed/yte-1.0.0.tar.gz"
-    sha256 "4c94a0223f04e4661a41824d7fba087340b8ac87397f6dc385ee34499832ed5c"
+    url "https://files.pythonhosted.org/packages/8b/c7/3f881643f360d74c745c548aba23694bc4a57d3be688825aa7c0d995c9b3/yte-1.2.0.tar.gz"
+    sha256 "0368f220bb96fb3290bbd5a90e3d218af483d0d3e5abf9b08b24e29b150f151e"
   end
 
   def install

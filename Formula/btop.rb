@@ -1,18 +1,18 @@
 class Btop < Formula
   desc "Resource monitor. C++ version and continuation of bashtop and bpytop"
   homepage "https://github.com/aristocratos/btop"
-  url "https://github.com/aristocratos/btop/archive/refs/tags/v1.2.3.tar.gz"
-  sha256 "8348bb37b642bf899b5ce0850d64e12cf9671c8c9624f3d21b58a015cd502107"
+  url "https://github.com/aristocratos/btop/archive/refs/tags/v1.2.5.tar.gz"
+  sha256 "93ff23276f2c626282037766542543dad5964fb6117c7902c4a4899607f8c95f"
   license "Apache-2.0"
   head "https://github.com/aristocratos/btop.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "ec8b2efef8f849e062d55e003aa15cf9aaf1c988ece7908cc654e57e894d18da"
-    sha256 cellar: :any,                 arm64_big_sur:  "a9c89bc80ce208d91ace1b65f40e99f08bd17985de3362247d77a136ac88ccba"
-    sha256 cellar: :any,                 monterey:       "8be5e0c48512f87d73231e844b1ce5e449f2fed25b2f0c7bd58ea0e1e0510762"
-    sha256 cellar: :any,                 big_sur:        "1a7ad33cc37021c4c38dfe235303726a84deb09e09daeb705f1f40c7ca16e118"
-    sha256 cellar: :any,                 catalina:       "85e62c7b80d9aff4b94d9d7194c47d08b9c11a8625490a0eef641616ffb4696a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7352b5601def8eedc9332d1298321c5d65e359ffea27c468125ebc616ac49e7b"
+    sha256 cellar: :any,                 arm64_monterey: "04ad82b13e5f43d91b84197a881b356363dc9af1e00a025102c33b7630dcfa56"
+    sha256 cellar: :any,                 arm64_big_sur:  "d9daa68ef616a418b24ad15a5b812bbeb069ed9986b75f3ab020c85bed5eb709"
+    sha256 cellar: :any,                 monterey:       "02700d9c092660130725865728f730d4e81bd5a43a5070dcdb9c107e6548dd70"
+    sha256 cellar: :any,                 big_sur:        "24de9a4de92073b48639218832123299ee2dc17cbf4121b34a065f5e2eae985e"
+    sha256 cellar: :any,                 catalina:       "050cd9436e965e6b77d94287acb80de9acfdf6b6639923e9c89cab46e2fc8272"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "52a701e94564ccbc52893fe8203bc97447122b0975c072b6570db8d3f64ebf53"
   end
 
   depends_on "coreutils" => :build

@@ -4,6 +4,7 @@ class CargoC < Formula
   url "https://github.com/lu-zero/cargo-c/archive/v0.9.8.tar.gz"
   sha256 "7c649061826e0ad3c2c8735718f4a0c4afd12eed9b9fdc5fe59e34582902e1c5"
   license "MIT"
+  revision 2
 
   livecheck do
     url :stable
@@ -11,12 +12,12 @@ class CargoC < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_monterey: "ad2f1bf8acd796564d2b9f8e806c3a7bc89fe9f3581402fdfe1c543c8ede2db5"
-    sha256 cellar: :any,                 arm64_big_sur:  "687157ee0c385362844ca293e3b6eed5ec1ff9e294e30200f6d23e2ac10b1e3e"
-    sha256 cellar: :any,                 monterey:       "48a923cebe350085446cc69e5c0d3ce4ae21615d330673e18ef5634957987aed"
-    sha256 cellar: :any,                 big_sur:        "26d49741af3e6d22b61e5b2ffceeffb0dd856cd250ea3d6dc63f95c1f514cf87"
-    sha256 cellar: :any,                 catalina:       "de7388c4b1b3c02697a77eed71216dfea790380bd282067faa6e7d48222cbead"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fcc381cec156020f08fae8cdeebe6f8877de438bd785478907ffce8bdbff3399"
+    sha256 cellar: :any,                 arm64_monterey: "4eaf3f9baa7b86d145965549c863852edb96dd912c4eaef79479348733bd5fc0"
+    sha256 cellar: :any,                 arm64_big_sur:  "289aed48fcf4e1882d50765c746acd5d76f5b7ac2d82062b2b626d490189c0fc"
+    sha256 cellar: :any,                 monterey:       "d4b991d5730d25cbe12153143eab2b85638fcab48664a53a9f4078c908cf3179"
+    sha256 cellar: :any,                 big_sur:        "336d17a7a76a35cb36ef451d930cf1397bb8b753882770e61c2cc1de0bfb2035"
+    sha256 cellar: :any,                 catalina:       "1076573f2cd24eee139882b151ff9966c5f72e54d2796c109784816633f81f07"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ef52f235d170217052147b35a54381e3eb472221b8ec918ac95fefe52ff4e070"
   end
 
   depends_on "rust" => :build
@@ -30,7 +31,34 @@ class CargoC < Formula
     depends_on "pkg-config" => :build
   end
 
+  # Workaround to patch cargo dependency tree for libgit2 issue
+  # Issue ref: https://github.com/rust-lang/cargo/issues/10446
+  # Using .crate as GitHub source tarball results in build failures.
+  # TODO: Remove when cargo-c release uses cargo version with fix
+  resource "cargo" do
+    url "https://static.crates.io/crates/cargo/cargo-0.60.0.crate"
+    sha256 "bc194fab2f0394703f2794faeb9fcca34301af33eee96fa943b856028f279a77"
+  end
+
+  # Fix issue with libgit2 >= 1.4 and git2-rs < 0.14.
+  # Issue ref: https://github.com/rust-lang/git2-rs/issues/813
+  # TODO: Remove when release dependency tree uses git2-rs >= 0.14
+  patch :DATA
+
   def install
+    # TODO: Remove locally patched `cargo` when issue is fixed and in release
+    resource("cargo").stage do
+      system "tar", "--strip-components", "1", "-xzvf", "cargo-0.60.0.crate"
+      # Cannot directly apply upstream commit since the Cargo.toml is different.
+      # Commit ref: https://github.com/rust-lang/cargo/commit/e756c130cf8b6348278db30bcd882a7f310cf58e
+      inreplace "Cargo.toml" do |s|
+        s.gsub!(/(\.git2\]\nversion) .*/, "\\1 = \"0.14.1\"")
+        s.gsub!(/(\.git2-curl\]\nversion) .*/, "\\1 = \"0.15.0\"")
+        s.gsub!(/(\.libgit2-sys\]\nversion) .*/, "\\1 = \"0.13.1\"")
+      end
+      (buildpath/"vendor/cargo").install Dir["*"]
+    end
+
     ENV["LIBGIT2_SYS_USE_PKG_CONFIG"] = "1"
     ENV["LIBSSH2_SYS_USE_PKG_CONFIG"] = "1"
 
@@ -43,3 +71,19 @@ class CargoC < Formula
     assert_match cargo_error, shell_output("#{bin}/cargo-cbuild cbuild 2>&1", 1)
   end
 end
+
+__END__
+diff --git a/Cargo.toml b/Cargo.toml
+index c8426f2..d82b2b5 100644
+--- a/Cargo.toml
++++ b/Cargo.toml
+@@ -43,6 +43,9 @@ cc = "1.0"
+ glob = "0.3"
+ itertools = "0.10"
+
++[patch.crates-io]
++cargo = { path = "vendor/cargo" }
++
+ [features]
+ default = []
+ vendored-openssl = ["cargo/vendored-openssl"]

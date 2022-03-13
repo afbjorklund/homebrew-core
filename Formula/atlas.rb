@@ -1,18 +1,18 @@
 class Atlas < Formula
   desc "Database toolkit"
   homepage "https://atlasgo.io/"
-  url "https://github.com/ariga/atlas/archive/v0.3.5.tar.gz"
-  sha256 "005c0108fc92355a7a7c9df98dd18062a3575e970a5aa992d7a0a731a451b49c"
+  url "https://github.com/ariga/atlas/archive/v0.3.7.tar.gz"
+  sha256 "e958e6e31cf7f04f082939322875165d38685e1a2f59334733dd47c44c19b747"
   license "Apache-2.0"
   head "https://github.com/ariga/atlas.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "337c291e8ea39e766bd7994753f8ae2a340bbb26f323e3ad73716edefae6a64e"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "44c134efad6908adad0fdf35b0fca8a36a86a267060af4731f5287a081a75e36"
-    sha256 cellar: :any_skip_relocation, monterey:       "6d700e558f21125f851a52f5f1224e3ae9900c2855fdb32b341aca1aed457995"
-    sha256 cellar: :any_skip_relocation, big_sur:        "fdf0b5440e7ba0365057f9bfa00ef8726799e2a716f24c289a894e5201d8fea2"
-    sha256 cellar: :any_skip_relocation, catalina:       "f7cbb0bbc12f8952ab8df50abe0d0de2211a1cca1ac30a71fa6a075206cd0a48"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "556aa1a6ea851d4125bc6833155c4f90f70e0e96de7d33d2e3577f76cd35f868"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "4eed4bc6c5f3feb77e7418b226de83a65de552a357575cb01ab5694cd383fa0b"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "586520c4cd1b5fef5dd3b303a28db3fb5b7a18f7d4c11dd2d458dafc7cb0876f"
+    sha256 cellar: :any_skip_relocation, monterey:       "f09196071bec3303a4f70d12c728b05e1419921dbfe5330c6087a47fe8f67b45"
+    sha256 cellar: :any_skip_relocation, big_sur:        "0e3d8f12bffbd62192607bfe8c2c6d72e088029555d246aafede105087e381bc"
+    sha256 cellar: :any_skip_relocation, catalina:       "7e431d5b913036492241df603d3dc89dd03180bfa2d94eeb690a773338e49ea8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d3a318452852655cab9aaa051007485885204ef9d572405beeaa541c371ac37a"
   end
 
   depends_on "go" => :build
